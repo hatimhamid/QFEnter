@@ -191,6 +191,7 @@ function! s:OpenQFItem(tabwinfunc, qfopencmd, qflnum)
 	let qfopened_tabnr = tabpagenr()
 	let qfopened_winnr = winnr()
         exec 'call g:RecoverTagStack()'
+        normal zv
 	if (match(&switchbuf,'useopen')>-1 || match(&switchbuf,'usetab')>-1)
 		if target_newtabwin==#'nt'
 			if target_tabnr!=qfopened_tabnr
